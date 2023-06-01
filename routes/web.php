@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Models\Company;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,14 +15,27 @@ use App\Models\Company;
 |
 */
 
-Route::get('/', function () {
+Route::get('/hub/{id}', function ($id) {
     return view('home', [
-        'company' => Company::getCompanyAPI()
+        'company' => Company::getCompany($id)
     ]);
 });
 
-Route::get('/{id}', function ($id) {
-    return view('card', [
-        'card' => Company::pickCompany($id)
-    ]);
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/search', function (Request $request) {
+    $companySearch = $request->company;
+    if ($companySearch) {
+        return view('search', [
+            'company' => $companySearch,
+            'companies' => Company::listCompanies($companySearch)
+        ]);
+    } else {
+        return view('search', [
+            'company' => null,
+            'companies' => []
+        ]);
+    }
 });

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    @php
+@php
     $avatar = $company['avatar'];
     $newAvatar = str_replace("public/", "storage/", $avatar);
 @endphp
@@ -22,10 +22,5 @@
     <h1 class="text-xl font-bold">{{$company['name']}}</h1>
     <h2>{{$company['company_type']}}
 
-    {{-- @foreach ($cards as $card)
-        <h2>{{$card['id']}}. {{$card['title']}}</h2>
-        {{$card['origem']}} ==>> {{$card['destino']}}
-        <br /><br />
-    @endforeach --}}
 </body>
 </html>
