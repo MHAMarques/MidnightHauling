@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;500;700&display=swap');
+
+aside {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 80px;
+    height: 100vh;
+    background: rgba(10, 10, 10, 0.326) url('../body_background.png') repeat scroll top left;
+    background: linear-gradient(90deg, rgba(13, 13, 13, 0.750) 10%, rgba(11, 11, 11, 0.85) 100%);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 5px 0px 80px 80px;
+    padding: 0px 10px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FF7B00;
+}
+
+h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Rajdhani', sans-serif;
+    width: 100%;
+    font-size: 58px;
+    font-weight: 700;
+    color: white;
+    margin: 10px 0px 45px 0px;
+    position: relative;
+}
+
+h2 {
+    display: inline-block;
+    font-size: 12px;
+    text-align: center;
+    padding: 0px 2px;
+}
+
+h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+small {
+    font-size: 14px;
+    position: absolute;
+    bottom: -15px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 13px;
+    margin: 12px 5px;
+    color: rgb(164, 164, 164);
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 5px 0px;
+}
+
+fieldset {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 510px;
+    min-width: 90px;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: justify;
+}
+
+em {
+    color: navajowhite;
+}
+
+.spaner_id {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 62px;
+    font-weight: 600;
+    color: whitesmoke;
+}
+
+.logo_profile>img {
+    margin: 20px 0px 25px 0px;
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.icon_card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 60px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Rajdhani', sans-serif;
+    color: white;
+    background: radial-gradient(#404040, #101010);
+    border: 2px solid #FF7B00;
+}
+
+.icon_task {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 900;
+    color: white;
+    background: radial-gradient(#404040, #101010);
+    border: 2px solid #121212;
+}
+
+.icon_task:hover {
+    color: #FF7B00;
+    border: 2px solid #FF7B00;
+}
+
+.icon_selected {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 900;
+    color: rgb(122, 122, 122);
+    background: radial-gradient(#404040, #101010);
+    border: 2px solid #404040;
+}
+
+.mainPage_Container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 45px;
+    width: 100%;
+}
+
+.mainPage_Card {
+    max-width: 90%;
+    min-height: 200px;
+}
+
+.mainPage_CardContent {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 500px) {
+    .mainPage_CardContent {
+        flex-flow: row wrap-reverse;
+        gap: 15px;
+    }
+
+    h1 {
+        width: 90%;
+        font-size: 42px;
+        margin: 10px 5px 45px 25px;
+    }
+
+    small {
+        font-size: 14px;
+        position: absolute;
+        bottom: -25px;
+    }
+}

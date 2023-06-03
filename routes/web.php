@@ -15,12 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/hub/{id}', function ($id) {
-    return view('home', [
-        'company' => Company::getCompany($id)
-    ]);
-});
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -38,4 +32,19 @@ Route::get('/search', function (Request $request) {
             'companies' => []
         ]);
     }
+});
+
+Route::get('/hub', function () {
+    return view('welcome');
+});
+
+Route::get('/hub/{id}', function ($id) {
+    if ($id == 'null') {
+        return view('welcome');
+    }
+
+    return view('hub', [
+        'companyID' => $id,
+        'company' => Company::getCompany($id)
+    ]);
 });
