@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CompanyController;
 use App\Models\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -15,36 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [CompanyController::class, 'index']);
 
-Route::get('/search', function (Request $request) {
-    $companySearch = $request->company;
-    if ($companySearch) {
-        return view('search', [
-            'company' => $companySearch,
-            'companies' => Company::listCompanies($companySearch)
-        ]);
-    } else {
-        return view('search', [
-            'company' => null,
-            'companies' => []
-        ]);
-    }
-});
+Route::get('/search', [CompanyController::class, 'search']);
 
-Route::get('/hub', function () {
-    return view('welcome');
-});
+Route::get('/hub', [CompanyController::class, 'index']);
 
-Route::get('/hub/{id}', function ($id) {
-    if ($id == 'null') {
-        return view('welcome');
-    }
-
-    return view('hub', [
-        'companyID' => $id,
-        'company' => Company::getCompany($id)
-    ]);
-});
+Route::get('/hub/{id}', [CompanyController::class, 'show']);

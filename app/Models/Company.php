@@ -51,7 +51,6 @@ class Company
         }
     }
 
-
     public static function getETSMarket()
     { {
             $marketURL = "https://e.truckyapp.com/api/v1/economy/market/1";
