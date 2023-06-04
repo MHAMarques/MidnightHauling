@@ -13,6 +13,18 @@ class CompanyController extends Controller
         return view('welcome');
     }
 
+    public function show($id)
+    {
+        if ($id == 'null') {
+            return view('welcome');
+        }
+
+        return view('hub', [
+            'companyID' => $id,
+            'company' => Company::getCompany($id)
+        ]);
+    }
+
     public function search(Request $request)
     {
         $companySearch = $request->company;
@@ -27,17 +39,5 @@ class CompanyController extends Controller
                 'companies' => []
             ]);
         }
-    }
-
-    public function show($id)
-    {
-        if ($id == 'null') {
-            return view('welcome');
-        }
-
-        return view('hub', [
-            'companyID' => $id,
-            'company' => Company::getCompany($id)
-        ]);
     }
 }

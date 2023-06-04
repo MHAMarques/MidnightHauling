@@ -1,9 +1,9 @@
-@props(['company', 'companyID', 'newAvatar'])
+@props(['company', 'companyID',])
 
 <header class="z-10">
     <aside>
         <section>
-            <a href="/hub/{{$companyID}}"><div class="logo_profile"><img src="https://e.truckyapp.com/{{$newAvatar}}" title="{{$company['name']}}" alt="Logotipo da empresa {{$company['name']}}"></div></a>
+            <a href="/hub/{{$companyID}}"><div class="logo_profile"><img src="{{$company['avatar_url']}}" title="{{$company['name']}}" alt="Logotipo da empresa {{$company['name']}}"></div></a>
         </section>
         <section>
 
