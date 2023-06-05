@@ -484,7 +484,7 @@ video {
 }
 
 .min-w-screen {
-    min-width: 280px
+    min-width: 240px
 }
 
 .w-full {
@@ -638,6 +638,10 @@ video {
     text-align: right
 }
 
+.text-left {
+    text-align: left
+}
+
 .text-justify {
     text-align: justify
 }
@@ -645,6 +649,11 @@ video {
 .text-xl {
     font-size: 1.85rem;
     line-height: 1.75rem
+}
+
+.text-xxl {
+    font-size: 4.85rem;
+    line-height: 2.75rem
 }
 
 .text-lg {

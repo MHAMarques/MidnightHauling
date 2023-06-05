@@ -51,7 +51,7 @@
                                 <h2 class="altfont px-6 text-xl font-semibold text-gray-900 dark:text-white">Encontre sua VTC</h2>
                             </div>
 
-                            <p class="text-justify mt-4 px-6 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                            <p class="w-full text-justify mt-4 px-6 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                                 <strong>Clique aqui</strong> para procurar sua <strong>Company ID</strong>. Obtenha acesso à ferramenta para acompanhar as métricas, as oportunidades e o desempenho da equipe de motoristas que compõe sua <strong>Virtual Transport Company</strong> no TruckyApp.
                             </p>
                         </div>

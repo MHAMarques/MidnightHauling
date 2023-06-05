@@ -25,4 +25,5 @@ Route::get('/hub', [CompanyController::class, 'index']);
 
 Route::get('/hub/{id}', [CompanyController::class, 'show']);
 
+
 Route::get('/drivers/{id}', [MembersController::class, 'index']);

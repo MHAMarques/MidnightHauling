@@ -41,7 +41,7 @@
             <x-mainCompany :company="$company" />
             <div class="mainPage_Container">
                 @foreach ($members['data'] as $member)
-                    <x-mainCard refUrl="/driver/{{$member['id']}}" icon="account_circle" title="{{$member['name']}}">
+                    <x-mainCard refUrl="?driver={{$member['id']}}" icon="{{$member['role']['name'] == 'Owner' ? 'social_leaderboard' : 'account_circle'}}" title="{{$member['name']}}">
                         <h2 class="icon_card text-lg font-semibold text-gray-900 dark:text-white">lvl {{$member['level']}}</h2>
                         <p class="px-6 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                            <strong>Cargo:</strong> {{$member['role']['name']}}<br />
@@ -52,12 +52,14 @@
                     </x-mainCard>
                 @endforeach
             </div>
-            @if ($members['current_page'] > 1)
-                <a class="mt-16" href="?page={{$members['current_page']-1}}">Página anterior</a>
-            @endif
-            @if ($members['current_page'] < $members['last_page'])
-                <a class="mt-16" href="?page={{$members['current_page']+1}}">Próxima página</a>
-            @endif
+            <div class="w-full flex justify-center gap-6">
+                @if ($members['current_page'] > 1)
+                    <a class="mt-16" href="?page={{$members['current_page']-1}}">Página anterior</a>
+                @endif
+                @if ($members['current_page'] < $members['last_page'])
+                    <a class="mt-16" href="?page={{$members['current_page']+1}}">Próxima página</a>
+                @endif
+            </div>
         </section>
     </main>
 

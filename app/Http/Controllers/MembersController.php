@@ -16,7 +16,40 @@ class MembersController extends Controller
         }
 
         $page = $request->page;
-        if ($page) {
+        $driver = $request->driver;
+        $job = $request->job;
+        $turn = $request->turn;
+
+        if ($driver && $turn) {
+            $checkDriver = Members::showMember($driver);
+            if (!$checkDriver['company_id'] || $checkDriver['company_id'] != $id) {
+                abort(404);
+            }
+            return view('member', [
+                'companyID' => $id,
+                'member' => $checkDriver,
+                'jobs' => Members::memberJobs($driver, $turn)
+            ]);
+        } elseif ($driver) {
+            $checkDriver = Members::showMember($driver);
+            if (!$checkDriver['company_id'] || $checkDriver['company_id'] != $id) {
+                abort(404);
+            }
+            return view('member', [
+                'companyID' => $id,
+                'member' => $checkDriver,
+                'jobs' => Members::memberJobs($driver, null)
+            ]);
+        } elseif ($job) {
+            $checkJob = Members::memberJob($job, null);
+            if (!$checkJob['company_id'] || $checkJob['company_id'] != $id) {
+                abort(404);
+            }
+            return view('job', [
+                'companyID' => $id,
+                'job' => $checkJob
+            ]);
+        } elseif ($page) {
             return view('members', [
                 'companyID' => $id,
                 'company' => Company::getCompany($id),
