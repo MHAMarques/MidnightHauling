@@ -88,4 +88,35 @@ class Company
             }
         }
     }
+
+    public static function cargoIcons($jobCargo, $typeCargo)
+    {
+        $cargoType = "content_paste_search";
+        if ($typeCargo == 'refrigerated') {
+            $cargoType = "ac_unit";
+        } elseif ($jobCargo == 'liquid') {
+            $cargoType = "water_drop";
+        } elseif ($typeCargo == 'curtainside') {
+            $cargoType = "pallet";
+        } elseif ($jobCargo == 'containers') {
+            $cargoType = "inventory_2";
+        } elseif ($jobCargo == 'refrigerated') {
+            $cargoType = "ac_unit";
+        } elseif ($jobCargo == 'machinery' && $typeCargo == 'lowboy') {
+            $cargoType = "plumbing";
+        } elseif ($jobCargo == 'machinery') {
+            $cargoType = "garage";
+        } elseif ($jobCargo == 'construction') {
+            $cargoType = "handyman";
+        } elseif ($jobCargo == 'bulk') {
+            $cargoType = "grain";
+        } elseif ($jobCargo == 'inloader') {
+            $cargoType = "auto_awesome";
+        } elseif ($jobCargo == 'oversize') {
+            $cargoType = "swap_driving_apps_wheel";
+        } elseif ($typeCargo == 'lowboy') {
+            $cargoType = "plumbing";
+        }
+        return $cargoType;
+    }
 }

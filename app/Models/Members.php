@@ -141,6 +141,10 @@ class Members
             $cargoType = "grain";
         } elseif ($jobCargo == 'inloader') {
             $cargoType = "auto_awesome";
+        } elseif ($jobCargo == 'oversize') {
+            $cargoType = "swap_driving_apps_wheel";
+        } elseif ($typeCargo == 'lowboy') {
+            $cargoType = "plumbing";
         }
         return $cargoType;
     }
