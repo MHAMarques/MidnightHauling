@@ -3,8 +3,7 @@
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\MembersController;
 use App\Http\Controllers\MarketController;
-use App\Models\Company;
-use Illuminate\Http\Request;
+use App\Http\Controllers\RoutesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,13 +21,15 @@ Route::get('/', [CompanyController::class, 'index']);
 
 Route::get('/search', [CompanyController::class, 'search']);
 
-
 Route::get('/hub', [CompanyController::class, 'index']);
+
+Route::get('/off', [CompanyController::class, 'logoff']);
+
 
 Route::get('/hub/{id}', [CompanyController::class, 'show']);
 
-
 Route::get('/drivers/{id}', [MembersController::class, 'index']);
 
-
 Route::get('/market/{id}', [MarketController::class, 'index']);
+
+Route::get('/routes/{id}', [RoutesController::class, 'index']);

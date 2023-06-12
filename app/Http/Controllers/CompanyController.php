@@ -40,4 +40,12 @@ class CompanyController extends Controller
             ]);
         }
     }
+
+    public function logoff()
+    {
+        echo '<script>
+                localStorage.removeItem("MHCompanyId");
+                window.location.replace("/");
+            </script>';
+    }
 }

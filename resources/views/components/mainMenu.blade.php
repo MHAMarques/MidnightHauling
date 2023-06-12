@@ -17,11 +17,15 @@
             </nav></a>
             <a href="/routes/{{$companyID}}"><nav>
                 <div class="icon_task"><span class="material-symbols-outlined">local_shipping</span></div>
-                <h2>Rotas</h2>
+                <h2>Entregas</h2>
             </nav></a>
-            <a href="/garage/{{$companyID}}"><nav>
+            <a href="/admin/{{$companyID}}"><nav>
                 <div class="icon_task"><span class="material-symbols-outlined">analytics</span></div>
                 <h2>Admin</h2>
+            </nav></a>
+            <a href="/off"><nav>
+                <div class="icon_task"><span class="material-symbols-outlined">logout</span></div>
+                <h2>Sair</h2>
             </nav></a>
 
         </section>

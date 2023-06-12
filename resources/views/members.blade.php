@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{$company['name']}}</title>
+    <title>{{$company['name']}} - Motoritas</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -41,10 +41,11 @@
             <x-mainCompany :company="$company" />
             <div class="mainPage_Container">
                 @foreach ($members['data'] as $member)
-                    <x-mainCard refUrl="?driver={{$member['id']}}" icon="{{$member['role']['name'] == 'Owner' ? 'social_leaderboard' : 'account_circle'}}" title="{{$member['name']}}">
+                @php $cargoMember = $member['role']['name'] ?? 'Sem Cargo'; @endphp
+                    <x-mainCard refUrl="?driver={{$member['id']}}" icon="{{$cargoMember == 'Owner' ? 'social_leaderboard' : 'account_circle'}}" title="{{$member['name']}}">
                         <h2 class="icon_card text-lg font-semibold text-gray-900 dark:text-white">lvl {{$member['level']}}</h2>
                         <p class="px-6 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                           <strong>Cargo:</strong> {{$member['role']['name']}}<br />
+                           <strong>Cargo:</strong> {{$cargoMember}}<br />
                            <strong>Inatividade:</strong> {{$member['last_job_days']}} dias<br />
                            <strong>Rentabilidade:</strong> ${{$money = number_format($member['total_revenue'], 2, ',', '.')}}<br />
                            <strong>Distância total:</strong> {{$totalKM = number_format($member['total_driven_distance'], 0, '', '.')}}Km<br />

@@ -89,6 +89,63 @@ class Company
         }
     }
 
+    public static function getETSRoutes($id)
+    { {
+            $companyURL = "https://e.truckyapp.com/api/v1/company/" . $id . "/jobs?game_id=1&status=completed";
+            $client = new Client();
+            $response = $client->get($companyURL, [
+                'headers' => [
+                    'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36',
+                ],
+            ]);
+
+            $data = json_decode($response->getBody(), true);
+            if (!empty($data)) {
+                return $data;
+            } else {
+                return null;
+            }
+        }
+    }
+
+    public static function getATSRoutes($id)
+    { {
+            $companyURL = "https://e.truckyapp.com/api/v1/company/" . $id . "/jobs?game_id=2&status=completed";
+            $client = new Client();
+            $response = $client->get($companyURL, [
+                'headers' => [
+                    'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36',
+                ],
+            ]);
+
+            $data = json_decode($response->getBody(), true);
+            if (!empty($data)) {
+                return $data;
+            } else {
+                return null;
+            }
+        }
+    }
+
+    public static function getCompanyYearStats($id)
+    { {
+            $companyURL = "https://e.truckyapp.com/api/v1/company/" . $id . "/stats/yearly";
+            $client = new Client();
+            $response = $client->get($companyURL, [
+                'headers' => [
+                    'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36',
+                ],
+            ]);
+
+            $data = json_decode($response->getBody(), true);
+            if (!empty($data)) {
+                return $data;
+            } else {
+                return null;
+            }
+        }
+    }
+
     public static function cargoIcons($jobCargo, $typeCargo)
     {
         $cargoType = "content_paste_search";

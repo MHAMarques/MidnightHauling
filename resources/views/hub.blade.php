@@ -56,7 +56,7 @@
                 </x-mainCard>
                         
 
-                <x-mainCard refUrl="/routes/{{$companyID}}" icon="local_shipping" title="Rotas de Transporte">
+                <x-mainCard refUrl="/routes/{{$companyID}}" icon="local_shipping" title="Entregas da Empresa">
                     <h2 class="icon_card text-lg font-semibold text-gray-900 dark:text-white">
                     @php
                         $mode = 'quilometragem';
@@ -74,11 +74,11 @@
                     @endphp
                     </h2>
                     <p class="px-6 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                        O foco da {{$company['tag']}} é a {{$mode}}. Clique para obter mais informações sobre as rotas mais populares e lucrativas realizado pela <strong class="font-bold">{{$company['name']}}</strong>.
+                        O foco da {{$company['tag']}} é a {{$mode}}. Clique para obter mais informações sobre as entregas e cargas mais populares e lucrativas realizado pela <strong class="font-bold">{{$company['name']}}</strong>.
                     </p>
                 </x-mainCard>
 
-                <x-mainCard refUrl="/routes/{{$companyID}}" icon="analytics" title="Acesso Administrativo">
+                <x-mainCard refUrl="/admin/{{$companyID}}" icon="analytics" title="Acesso Administrativo">
                     <h2 class="icon_card text-lg font-semibold text-gray-900 dark:text-white">
                         <span class="material-symbols-outlined text-xl">chart_data</span>
                     </h2>

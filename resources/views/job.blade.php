@@ -76,8 +76,8 @@ $timeTranslations = [
                     <h2 class="icon_card text-lg font-semibold text-gray-900 dark:text-white w-half">{{$job['max_speed']}}<br />KPH</h2>
                     <p class="px-6 text-gray-500 dark:text-gray-400 text-sm leading-relaxed w-full text-left">
                         <strong class="altfont text-white text-lg font-bold">Velocidade média: {{$job['average_speed_kmh']}}Km/h</strong><br />
-                        <strong>{{$job['vehicle'] ? 'Garagem: '.$job['vehicle']['garage']['city']['name'] : 'Locação: $'.$job['rent_cost_total']}}</strong> <br />
-                        <strong>Combustível: ${{$job['fuel_cost']}} / {{$job['fuel_used']}} L</strong><br />
+                        <strong>{{$job['vehicle'] ? 'Garagem: '.$job['vehicle']['garage']['city']['name'] : 'Locação: $'.$revMoney = number_format($job['rent_cost_total'], 2, ',', '.')}}</strong> <br />
+                        <strong>Combustível: ${{$revMoney = number_format($job['fuel_cost'], 2, ',', '.')}} / {{$job['fuel_used']}} L</strong><br />
                         <strong class="altfont text-white text-lg font-bold">Avarias: {{$job['total_damage']}}%</strong><br />
                         <strong class="px-6">Veículo ({{$job['vehicle_damage']}}%), Reboque ({{$job['trailers_damage']}}%) e Carga ({{$job['cargo_damage']}}%)<br /></strong>
                     </p>

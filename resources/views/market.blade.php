@@ -27,7 +27,7 @@
         window.location.replace('/');
     }
     if(storedId != companyID.value){
-        window.location.replace('/drivers/'+storedId);
+        window.location.replace('/market/'+storedId);
     }
 </script>
 
