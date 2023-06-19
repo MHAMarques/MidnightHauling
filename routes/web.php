@@ -33,3 +33,5 @@ Route::get('/drivers/{id}', [MembersController::class, 'index']);
 Route::get('/market/{id}', [MarketController::class, 'index']);
 
 Route::get('/routes/{id}', [RoutesController::class, 'index']);
+
+Route::get('/admin/{id}', [CompanyController::class, 'admin']);
