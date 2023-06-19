@@ -41,6 +41,18 @@ class CompanyController extends Controller
         }
     }
 
+    public function admin($id)
+    {
+        if ($id == 'null') {
+            return view('welcome');
+        }
+
+        return view('admin', [
+            'companyID' => $id,
+            'company' => Company::getCompany($id)
+        ]);
+    }
+
     public function logoff()
     {
         echo '<script>
