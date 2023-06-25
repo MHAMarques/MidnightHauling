@@ -126,7 +126,7 @@
                         form.addEventListener('submit', function(event) {
                             const tokenInput = document.getElementById('token');
                             const token = tokenInput.value;
-                            document.cookie = "MHToken=" + token + "; expires=Thu, 01 Jan 2024 00:00:00 UTC; path=/admin/11080";
+                            document.cookie = "MHToken=" + token + "; expires=Thu, 01 Jan 2024 00:00:00 UTC; path=/admin/{{$companyID}}";
                         });
                     });
                 </script>
