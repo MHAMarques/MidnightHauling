@@ -3,7 +3,7 @@
 @php 
     use App\Models\Company;
     usort($marketETS, function ($a, $b) {
-        return $b['price_per_km'] <=> $a['price_per_km'];
+        return $b['avg_job_income']['1000'] <=> $a['avg_job_income']['1000'];
     });
 @endphp
 <head>

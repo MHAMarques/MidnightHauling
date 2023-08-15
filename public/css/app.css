@@ -595,6 +595,7 @@ video {
 }
 
 .from-gray-700\/50 {
+    background-color: rgb(22, 32, 47);
     --tw-gradient-from: rgb(55 65 81 / 0.5);
     --tw-gradient-to: rgb(55 65 81 / 0);
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)

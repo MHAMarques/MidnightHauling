@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-@php use App\Models\Company; @endphp
+@php 
+    use App\Models\Company;
+    usort($marketATS, function ($a, $b) {
+        return $b['avg_job_income']['1000'] <=> $a['avg_job_income']['1000'];
+    });
+    usort($marketETS, function ($a, $b) {
+        return $b['avg_job_income']['1000'] <=> $a['avg_job_income']['1000'];
+    });
+@endphp
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
