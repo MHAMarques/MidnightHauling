@@ -82,7 +82,8 @@
 
             <div class="flex justify-center mt-16 px-0 items-center">
                 <div class="lg:fixed text-gray-500 m-6 text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
-                    Built with Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                    <!--Built with Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})-->
+                    Desenvolvido para empresas e motoristas do <strong><a href="https://truckyapp.com/" style="color: #ff0051" target="_blank">Trucky App</a></strong>
                 </div>
             </div>
         </div>

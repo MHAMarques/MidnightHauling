@@ -55,14 +55,16 @@ $timeTranslations = [
                     $avgIncome = $job['cargo_definition']['avg_job_income']['1000'] ?? 0;
                     $avgPKM = $job['cargo_definition']['price_per_km'] ?? 0;
                     $realAverage = 0;
+                    $realCut = 0;
                     if($job['driven_distance'] > 0){
                         $realAverage = number_format($job['income']/$job['driven_distance'], 2);
+                        $realCut = 100 - (($job['revenue'] * 100) / $job['income']);
                     }
-                    $realAdvantage = $realAverage - $avgPKM
+                    $realAdvantage = number_format(($realAverage - ($avgIncome/1000)), 2, ',', '.') ?? 0;
                 @endphp
 
                 <x-mainCard refUrl="#"  icon="map" title="{{$job['game_id'] == 2 ? 'ATS' : 'ETS'}} - {{$totalKM = number_format($job['driven_distance'], 0, '', '.')}} Km">
-                    <h2 class="icon_card text-lg font-semibold text-gray-900 dark:text-white w-half">{{$job['points']}}<br />exp</h2>
+                    <h2 class="icon_card text-lg font-semibold text-gray-900 dark:text-white w-half">{{$job['points']}}<br />EXP</h2>
                     <p class="px-6 text-gray-500 dark:text-gray-400 text-sm leading-relaxed w-full text-left">
                         <strong class="altfont text-white text-lg font-bold">{{$job['status'] == 'in_progress' ? 'Pendente' : strtr($job['duration'], $timeTranslations)}}</strong><br />
                         <strong class="text-white">« {{$job['source_city_name']}}</strong> (<strong>{{$job['source_company_name']}} / {{$job['auto_load'] ? 'Carga Automática' : 'Carga Manual'}}</strong>)<br />
@@ -84,7 +86,7 @@ $timeTranslations = [
                 </x-mainCard>
 
                 <x-mainCard refUrl="#"  icon="paid" title="${{$money = number_format($job['income'], 2, ',', '.')}}">
-                    <h2 class="icon_card text-lg font-semibold text-gray-900 dark:text-white w-half">{{$realAverage ?? 0}}<br />$Km</h2>
+                    <h2 class="icon_card text-lg font-semibold text-gray-900 dark:text-white w-half">-{{number_format($realCut, 0, ',', '.') ?? 0}}%</h2>
                     <p class="px-6 text-gray-500 dark:text-gray-400 text-sm leading-relaxed w-full text-left">
                         <strong class="altfont text-white text-lg font-bold">Impostos: - ${{$showTaxes = number_format($job['taxes'], 2, ',', '.')}}</strong><br />
                         <strong class="px-6">Despesas: - ${{$damageMoney = number_format($job['other_costs_total'], 2, ',', '.')}}</strong> <br />
@@ -94,11 +96,11 @@ $timeTranslations = [
                     </p>
                 </x-mainCard>
 
-                <x-mainCard refUrl="#"  icon="query_stats" title="Média do mercado: {{$avgIncome ? '± $'.$money = number_format($avgIncome/1000, 2, ',', '.') . '/Km' : '0,00'}}">
-                    <h2 class="icon_card text-lg font-semibold text-gray-900 dark:text-white w-half">{{$realAdvantage > 0 ? '+' . $realAdvantage : $realAdvantage}}<br />$km</h2>
+                <x-mainCard refUrl="#"  icon="query_stats" title="Mercado Trucky: {{$avgIncome ? '± $'.$money = number_format($avgIncome/1000, 2, ',', '.') . '/Km' : '0,00'}}">
+                    <h2 class="icon_card text-lg font-semibold text-gray-900 dark:text-white w-half">{{$realAdvantage > 0 ? '+' . $realAdvantage : $realAdvantage}}<br />$Km</h2>
                     <p class="px-6 text-gray-500 dark:text-gray-400 text-sm leading-relaxed w-full text-left">
-                        <strong class="altfont text-white text-lg font-bold">Preço/Km: ${{$avgPKM}}</strong><br />
-                        <strong class="px-6">Pago: ${{$realAverage}}</strong> <br />
+                        <strong class="altfont text-white text-lg font-bold">Tabelado: ${{$avgPKM}}/Km</strong><br />
+                        <strong class="px-6">Pago: ${{$realAverage}}/Km</strong> <br />
                         <strong class="altfont text-white text-lg font-bold">Tabelado: ${{$money = number_format($job['driven_distance'] * $avgPKM, 2, ',', '.')}}</strong><br />
                         <strong class="px-6">Pago: ${{$paidMoney = number_format($job['income'], 2, ',', '.')}}</strong> <br />
                     </p>
