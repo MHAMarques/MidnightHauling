@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Marcelo Henrique A Marques - GitHub.com/MHAMarques">
-    <meta name="description" content="Midnight Hauling [MHL] - App para rastreamento e gerenciamento de empresas de transportes virtual presentes na plataforma TruckyApp.">
+    <meta name="description" content="Midnight Haulers [MHL] - App para rastreamento e gerenciamento de empresas de transportes virtual presentes na plataforma TruckyApp.">
     
 
-    <title>Midnight Hauling - TruckyApp Tracker</title>
+    <title>Midnight Haulers - TruckyApp Tracker</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -33,7 +33,7 @@
                     <img src="{{ asset('mhlogo.png') }}" width="80" height="90"/>
                 </div>
                 <div>
-                    <h1 class="altfont w-full flex justify-center text-xl text-white font-bold">Midnight Hauling</h1>
+                    <h1 class="altfont w-full flex justify-center text-xl text-white font-bold">Midnight Haulers</h1>
                     <small class="altfont w-full flex justify-center text-sm text-gray-500">TruckyApp Company Tracker</small>
                 </div>
             </div>
