@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Midnight Hauling - TruckyApp Tracker</title>
+    <title>Midnight Haulers - TruckyApp Tracker</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -30,7 +30,7 @@
                     <img src="{{ asset('mhlogo.png') }}" width="80" height="90"/>
                 </div>
                 <div>
-                    <h1 class="altfont w-full flex justify-center text-xl text-white">Midnight Hauling</h1>
+                    <h1 class="altfont w-full flex justify-center text-xl text-white">Midnight Haulers</h1>
                     <small class="altfont w-full flex justify-center text-sm text-gray-500">TruckyApp Company Tracker</small>
                 </div>
             </a>
