@@ -47,15 +47,15 @@
                         $dataATS = $routes['ats'];
                         $dataAll = $routes['total'];
 
-                        $dataETS['total'] > 0 ? $realRaceRatioETS = ($dataETS['real']*100)/$dataETS['total'] : $realRaceRatioETS = 100; 
-                        $dataATS['total'] > 0 ? $realRaceRatioATS = ($dataATS['real']*100)/$dataATS['total'] : $realRaceRatioATS = 100; 
+                        $dataETS['total_jobs'] > 0 ? $realRaceRatioETS = ($dataETS['real_km']*100)/$dataETS['total_km'] : $realRaceRatioETS = 100; 
+                        $dataATS['total_jobs'] > 0 ? $realRaceRatioATS = ($dataATS['real_km']*100)/$dataATS['total_km'] : $realRaceRatioATS = 100; 
     
                     @endphp
                     <x-mainCard refUrl="?game=ets" icon="local_shipping" title="Trabalhos no ETS">
                         <h2 class="icon_card text-lg font-semibold text-gray-900 dark:text-white w-half"><span class="material-symbols-outlined text-xl">bakery_dining</span></h2>
                         <p class="px-6 text-gray-500 dark:text-gray-400 text-sm leading-relaxed w-full text-left">
                             <strong class="altfont text-white text-lg font-bold">Quilometragem de {{$routes['year']}}</strong><br />
-                            <strong class="px-6">Total: {{$totalKM = number_format($dataETS['real'], 0, '', '.')}} Km</strong> <br />
+                            <strong class="px-6">Total: {{$totalKM = number_format($dataETS['real_km'], 0, '', '.')}} Km</strong> <br />
                             <strong class="altfont text-white text-lg font-bold">Contratos despachados:</strong><br />
                             <strong class="px-6">Contratos Realizados: {{$totalJobs = number_format($dataETS['jobs_completed'], 0, '', '.')}}</strong> <br />
                             <strong class="px-6">Contratos Cancelados: {{$totalJobs = number_format($dataETS['jobs_canceled'], 0, '', '.')}}</strong> <br />
@@ -68,7 +68,7 @@
                         <h2 class="icon_card text-lg font-semibold text-gray-900 dark:text-white w-half"><span class="material-symbols-outlined text-xl">lunch_dining</span></h2>
                         <p class="px-6 text-gray-500 dark:text-gray-400 text-sm leading-relaxed w-full text-left">
                             <strong class="altfont text-white text-lg font-bold">Quilometragem de {{$routes['year']}}</strong><br />
-                            <strong class="px-6">Total: {{$totalKM = number_format($dataATS['total'], 0, '', '.')}} Km</strong> <br />
+                            <strong class="px-6">Total: {{$totalKM = number_format($dataATS['real_km'], 0, '', '.')}} Km</strong> <br />
                             <strong class="altfont text-white text-lg font-bold">Contratos despachados:</strong><br />
                             <strong class="px-6">Contratos Realizados: {{$totalJobs = number_format($dataATS['jobs_completed'], 0, '', '.')}}</strong> <br />
                             <strong class="px-6">Contratos Cancelados: {{$totalJobs = number_format($dataATS['jobs_canceled'], 0, '', '.')}}</strong> <br />
